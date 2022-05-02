@@ -1,16 +1,25 @@
 # ECommerce_NET_Angular
 
 mkdir non-stop
+
 cd non-stop
+
 dotnet new sln
+
 dotnet new webapi -o API
+
 dotnet sln add API
 code .
 
+
 cetificate: 
+
 dotnet dev-certs https --clean
+
 dotnet dev-certs https -t
+
 Restart VS
+
 
 run : dotnet run
 https://localhost:5001/weatherforecast
@@ -32,3 +41,13 @@ Microsoft.EntityFrameworkCore.Design
 dotnet ef migrations add InitialCreate -o Data/Migrations
 
 dotnet new classlib -o Core
+
+dotnet new classlib -o Infrastructure
+
+dotnet sln add Core
+
+dotnet sln add Infrastructure
+
+cd API -> dotnet add reference ../Infrastructure
+
+cd Infrastructure -> dotnet add reference ../Core
