@@ -51,3 +51,19 @@ dotnet sln add Infrastructure
 cd API -> dotnet add reference ../Infrastructure
 
 cd Infrastructure -> dotnet add reference ../Core
+
+drop db:
+
+cd non-stop
+
+dotnet ef database drop -p Infrastructure -s API
+
+drop migration:
+
+dotnet ef migrations remove -p Infrastructure -s API
+
+add migration:
+
+dotnet ef migrations add InitialCreate -p Infrastructure -s API -o Data/Migrations
+
+dotnet ef migrations remove -p Infrastructure -s API
