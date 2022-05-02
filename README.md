@@ -14,3 +14,21 @@ Restart VS
 
 run : dotnet run
 https://localhost:5001/weatherforecast
+
+install
+Microsoft.EntityFrameworkCore.Sqlite version 5.0.8
+
+dotnet restore
+
+dotnet tool list -g
+
+dotnet tool install --global dotnet-ef --version 5.0.8
+
+dotnet tool update --global dotnet-ef --version 5.0.8
+
+install
+Microsoft.EntityFrameworkCore.Design 
+
+dotnet ef migrations add InitialCreate -o Data/Migrations
+
+
