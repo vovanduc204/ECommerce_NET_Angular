@@ -31,4 +31,4 @@ Microsoft.EntityFrameworkCore.Design
 
 dotnet ef migrations add InitialCreate -o Data/Migrations
 
-
+dotnet new classlib -o Core
